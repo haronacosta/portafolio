@@ -1,0 +1,154 @@
+:root {
+	--primary-color: #148f77;
+	
+}
+
+html {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+}
+
+.header {
+	position: relative;
+	height: 100vh;
+	background-color: var(--primary-color);
+	color: #ffffff;
+}
+
+.header-content {
+    width: 100%;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.header-text {
+    flex: 100%;
+    max-width: 100%;
+    order: 2;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin: auto 0;
+    text-align: center;
+}
+
+.header-img{
+    order: 1;
+    margin-bottom: 1rem;
+}
+
+.header-title {
+	font-size: 3rem;
+	font-weight: 400;
+}
+
+.header-subtitle {
+	font-size: 1rem;
+}
+
+.header-top {
+	background-color: #0b5345;
+	text-align: center;
+	font-weight: 700;
+}
+
+.header-image{
+    width: 18rem;
+    margin-bottom: 3rem;
+}
+
+.header-logo{
+    margin-top: 0.4rem;
+    margin-left: 0.4rem;
+}
+
+.main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.footer {
+	background-color: greenyellow;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.header-title {
+	margin: 0 0.1rem;
+}
+
+.portafolio {
+	-webkit-flex: 100%;
+	flex: 100%;
+	max-width: 100%;
+}
+
+.about-me {
+	-webkit-flex: 100%;
+	flex: 100%;
+	max-width: 100%;
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+    html {
+        font-size: 16px;
+    }
+
+    .header-content{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .header-text{
+        flex: 60%;
+        max-width: 60%;
+        order: 1;
+    }
+
+    .header-img{
+        flex: 40%;
+        max-width: 40%;
+        order: 2;
+    }
+
+    .header-image {
+        margin-bottom: 0;
+    }
+
+	.portafolio {
+		flex: 75%;
+		max-width: 75%;
+		background-color: dodgerblue;
+		padding: 0 1rem;
+	}
+
+	.about-me {
+		flex: 25%;
+		max-width: 25%;
+		padding: 1rem;
+		background-color: red;
+	}
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1920px) {
+    html {
+        font-size: 28px;
+    }
+}
