@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm Haron Acosta",
+    "subtitle": "Fullstack Developer",
+    "description": "I develop modern and scalable web applications with the latest technologies. Passionate about creating exceptional digital experiences.",
+    "cta": "View my projects",
+    "scroll": "Scroll down"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a passionate fullstack developer with a love for technology and innovation. With experience in modern web application development, I specialize in creating robust and scalable solutions.",
+    "experience": "Years of experience",
+    "projects": "Projects completed",
+    "technologies": "Technologies mastered"
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Some of the projects I've worked on",
+    "viewProject": "View project",
+    "viewCode": "View code"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Technologies I master and use in my projects",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Database",
+    "tools": "Tools"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Have a project in mind? Let's talk!",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send message",
+    "location": "Location",
+    "emailLabel": "Email",
+    "phone": "Phone",
+    "sending": "Sending...",
+    "contactInfo": "Contact Information",
+    "socialMedia": "Social Media",
+    "country": "Mexico",
+    "emailAddress": "contact@haronacosta.com",
+    "phoneNumber": "+52 (55) 1234-5678"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with ❤️ by Haron Acosta",
+    "brand": "HA",
+    "description": "Passionate fullstack developer creating innovative digital solutions and exceptional user experiences.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "location": "📍 Mexico",
+    "email": "📧 contact@haronacosta.com",
+    "phone": "📱 +52 (55) 1234-5678",
+    "copyright": "© {year} Haron Acosta."
+  }
+}

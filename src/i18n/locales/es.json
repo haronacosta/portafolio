@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Hola, soy Haron Acosta",
+    "subtitle": "Fullstack Developer",
+    "description": "Desarrollo aplicaciones web modernas y escalables con las últimas tecnologías. Apasionado por crear experiencias digitales excepcionales.",
+    "cta": "Ver mis proyectos",
+    "scroll": "Desplazarse hacia abajo"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": "Soy un desarrollador fullstack apasionado por la tecnología y la innovación. Con experiencia en el desarrollo de aplicaciones web modernas, me especializo en crear soluciones robustas y escalables.",
+    "experience": "Años de experiencia",
+    "projects": "Proyectos completados",
+    "technologies": "Tecnologías dominadas"
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "subtitle": "Algunos de los proyectos en los que he trabajado",
+    "viewProject": "Ver proyecto",
+    "viewCode": "Ver código"
+  },
+  "skills": {
+    "title": "Habilidades y Tecnologías",
+    "subtitle": "Tecnologías que domino y uso en mis proyectos",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Base de datos",
+    "tools": "Herramientas"
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "¿Tienes un proyecto en mente? ¡Hablemos!",
+    "name": "Nombre",
+    "email": "Email",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "location": "Ubicación",
+    "emailLabel": "Email",
+    "phone": "Teléfono",
+    "sending": "Enviando...",
+    "contactInfo": "Información de Contacto",
+    "socialMedia": "Redes Sociales",
+    "country": "México",
+    "emailAddress": "contact@haronacosta.com",
+    "phoneNumber": "+52 (55) 1234-5678"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "madeWith": "Hecho con ❤️ por Haron Acosta",
+    "brand": "HA",
+    "description": "Desarrollador fullstack apasionado por crear soluciones digitales innovadoras y experiencias de usuario excepcionales.",
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contacto",
+    "location": "📍 México",
+    "email": "📧 contact@haronacosta.com",
+    "phone": "📱 +52 (55) 1234-5678",
+    "copyright": "© {year} Haron Acosta."
+  }
+}
