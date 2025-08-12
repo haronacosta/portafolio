@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="py-20 bg-white dark:bg-gray-800">
+  <section id="projects" class="py-20 bg-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -199,7 +199,9 @@
                 </div>
               </template>
               <template v-else>
-                <div class="absolute inset-0 h-64 bg-gradient-to-br from-blue-500 to-green-400"></div>
+                <div
+                  class="absolute inset-0 h-64 bg-gradient-to-br from-blue-500 to-green-400"
+                ></div>
                 <div class="absolute inset-0 bg-black/20"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                   <div class="text-white text-center">
