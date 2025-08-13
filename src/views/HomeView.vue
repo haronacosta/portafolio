@@ -8,10 +8,10 @@ import ContactComponent from '../components/ContactComponent.vue'
 
 <template>
   <div class="min-h-screen">
-    <HeroComponent />
-    <AboutComponent />
-    <ProjectsComponent />
-    <SkillsComponent />
-    <ContactComponent />
+    <HeroComponent id="hero" />
+    <AboutComponent id="about" />
+    <ProjectsComponent id="projects" />
+    <SkillsComponent id="skills" />
+    <ContactComponent id="contact" />
   </div>
 </template>

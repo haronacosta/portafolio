@@ -14,22 +14,21 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">
-            <router-link
+            <a
               v-for="item in navItems"
               :key="item.path"
-              :to="item.path"
+              :href="item.path"
               class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              :class="{ 'text-blue-600 dark:text-blue-400': $route.path === item.path }"
             >
               {{ $t(item.key) }}
-            </router-link>
+            </a>
           </div>
         </div>
 
         <!-- Right side - Language switcher, dark mode toggle and mobile menu button -->
         <div class="flex items-center space-x-4">
-          <LanguageSwitcher />
-          <DarkModeToggle class="ml-4" />
+          <DarkModeToggle />
+          <LanguageSwitcher class="ml-4" />
 
           <!-- Mobile menu button -->
           <button
@@ -71,19 +70,15 @@
       <!-- Mobile Navigation -->
       <div v-if="isMobileMenuOpen" class="md:hidden border-t border-gray-200 dark:border-gray-700">
         <div class="px-2 pt-2 pb-3 space-y-1">
-          <router-link
+          <a
             v-for="item in navItems"
             :key="item.path"
-            :to="item.path"
+            :href="item.path"
             @click="closeMobileMenu"
             class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
-            :class="{
-              'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20':
-                $route.path === item.path,
-            }"
           >
             {{ $t(item.key) }}
-          </router-link>
+          </a>
         </div>
       </div>
     </div>
@@ -97,11 +92,11 @@ import DarkModeToggle from './DarkModeToggle.vue'
 const isMobileMenuOpen = ref(false)
 
 const navItems = [
-  { path: '/', key: 'nav.home' },
-  { path: '/about', key: 'nav.about' },
-  { path: '/projects', key: 'nav.projects' },
-  { path: '/skills', key: 'nav.skills' },
-  { path: '/contact', key: 'nav.contact' },
+  { path: '#hero', key: 'nav.home' },
+  { path: '#about', key: 'nav.about' },
+  { path: '#projects', key: 'nav.projects' },
+  { path: '#skills', key: 'nav.skills' },
+  { path: '#contact', key: 'nav.contact' },
 ]
 
 const toggleMobileMenu = () => {

@@ -36,6 +36,7 @@
   },
   "contact": {
     "title": "Contact Me",
+    "invite": "Let's connect! Email me or follow on social media.",
     "subtitle": "Have a project in mind? Let's talk!",
     "name": "Name",
     "email": "Email",
@@ -48,7 +49,7 @@
     "contactInfo": "Contact Information",
     "socialMedia": "Social Media",
     "country": "Mexico",
-    "emailAddress": "contact@haronacosta.com",
+    "email_address": "contact@haronacosta.com",
     "phoneNumber": "+52 (55) 1234-5678"
   },
   "footer": {
@@ -58,9 +59,9 @@
     "description": "Passionate fullstack developer creating innovative digital solutions and exceptional user experiences.",
     "quickLinks": "Quick Links",
     "contact": "Contact",
-    "location": "📍 Mexico",
-    "email": "📧 contact@haronacosta.com",
-    "phone": "📱 +52 (55) 1234-5678",
+    "location": "Location",
+    "email": "",
+    "phone": "",
     "copyright": "© {year} Haron Acosta."
   }
 }

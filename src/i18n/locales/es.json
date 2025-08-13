@@ -36,6 +36,7 @@
   },
   "contact": {
     "title": "Contáctame",
+    "invite": "¡Conectemos! Escríbeme o sígueme en redes sociales.",
     "subtitle": "¿Tienes un proyecto en mente? ¡Hablemos!",
     "name": "Nombre",
     "email": "Email",
@@ -48,7 +49,7 @@
     "contactInfo": "Información de Contacto",
     "socialMedia": "Redes Sociales",
     "country": "México",
-    "emailAddress": "contact@haronacosta.com",
+    "email_address": "contact@haronacosta.com",
     "phoneNumber": "+52 (55) 1234-5678"
   },
   "footer": {
@@ -58,9 +59,9 @@
     "description": "Desarrollador fullstack apasionado por crear soluciones digitales innovadoras y experiencias de usuario excepcionales.",
     "quickLinks": "Enlaces Rápidos",
     "contact": "Contacto",
-    "location": "📍 México",
-    "email": "📧 contact@haronacosta.com",
-    "phone": "📱 +52 (55) 1234-5678",
+    "location": "Ubicación",
+    "email": "",
+    "phone": "",
     "copyright": "© {year} Haron Acosta."
   }
 }
