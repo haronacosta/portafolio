@@ -7,10 +7,7 @@
     <svg
       :height="heroHeight"
       :width="heroWidth"
-      :class="[
-        'absolute inset-0 w-full h-full pointer-events-none z-0',
-        colorMode === 'dark' ? 'animate-stars-dark' : 'animate-stars',
-      ]"
+      :class="['absolute inset-0 w-full h-full pointer-events-none z-0']"
       :viewBox="`0 0 ${heroWidth} ${heroHeight}`"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +82,8 @@ onBeforeUnmount(() => {
 const colorMode = inject('colorMode', ref('light'))
 
 // Generar estrellas distribuidas uniformemente y cubrir todo el ancho
-const STAR_COLS = 36
-const STAR_ROWS = 28
+const STAR_COLS = 32
+const STAR_ROWS = 24
 const STAR_COUNT = STAR_COLS * STAR_ROWS
 interface Star {
   id: number
@@ -97,30 +94,26 @@ interface Star {
 const stars = ref<Star[]>([])
 
 function generateStars() {
+  // Área extendida: 2.2x el ancho y alto del hero, centrada
   const width = heroWidth.value
   const height = heroHeight.value
+  // extW y extH ya no se usan
+  // offsetX y offsetY ya no se usan
+  // Ajuste: la primera y última columna SIEMPRE dentro del área visible
+  const minX = 0
+  const maxX = width
+  const minY = 0
+  const maxY = height
   stars.value = Array.from({ length: STAR_COUNT }, (_, i) => {
     const row = Math.floor(i / STAR_COLS)
     const col = i % STAR_COLS
-    let cx
-    if (col === 0) {
-      cx = 0
-    } else if (col === STAR_COLS - 1) {
-      cx = width
-    } else {
-      cx = col * (width / (STAR_COLS - 1)) + (Math.random() - 0.5) * (width / STAR_COLS) * 0.6
-    }
-    let cy
-    if (row === 0) {
-      cy = 0
-    } else if (row === STAR_ROWS - 1) {
-      cy = height
-    } else if (row === STAR_ROWS - 2) {
-      // Asegura una fila justo antes del borde inferior
-      cy = height - height / (STAR_ROWS - 1)
-    } else {
-      cy = row * (height / (STAR_ROWS - 1)) + (Math.random() - 0.5) * (height / STAR_ROWS) * 0.6
-    }
+    // Interpolar entre minX y maxX para las columnas visibles
+    let cx = minX + (col / (STAR_COLS - 1)) * (maxX - minX)
+    // Añadir un pequeño random para naturalidad, pero sin salirse del área
+    cx += (Math.random() - 0.5) * (width / STAR_COLS) * 0.6
+    // Interpolar entre minY y maxY para las filas visibles
+    let cy = minY + (row / (STAR_ROWS - 1)) * (maxY - minY)
+    cy += (Math.random() - 0.5) * (height / STAR_ROWS) * 0.6
     const r = Math.random() * 1.5 + 0.5
     return { id: i, cx, cy, r }
   })
@@ -172,28 +165,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-@keyframes moveStars {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
-  100% {
-    transform: translateY(-120px) translateX(180px);
-  }
-}
-@keyframes moveStarsDark {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
-  100% {
-    transform: translateY(-200px) translateX(320px);
-  }
-}
-.animate-stars {
-  animation: moveStars 36s linear infinite alternate;
-}
-.animate-stars-dark {
-  animation: moveStarsDark 22s linear infinite alternate;
-}
+/* Animación de estrellas eliminada */
 @keyframes blink {
   0%,
   100% {
