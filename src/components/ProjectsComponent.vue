@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="py-20 bg-gray-800">
+  <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -371,17 +371,13 @@ const projects: Project[] = [
 const visibleCards = 3
 const carouselIndex = ref(0)
 
-// Para el carrusel infinito, duplicamos los extremos
 const extendedProjects = computed(() => {
   if (projects.length <= visibleCards) return projects
-  // Clonamos los últimos y primeros elementos para el efecto infinito
   return [...projects.slice(-visibleCards), ...projects, ...projects.slice(0, visibleCards)]
 })
 
-// El índice real para el translateX
 const realIndex = computed(() => carouselIndex.value + visibleCards)
 
-// Cuando cambie el índice, si estamos en los clones, saltamos al real
 function handleTransitionEnd() {
   if (carouselIndex.value < 0) {
     carouselIndex.value = projects.length - 1
