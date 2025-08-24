@@ -32,20 +32,14 @@
               {{ $t('skills.frontend') }}
             </h3>
           </div>
-          <div class="space-y-2">
-            <div
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span
               v-for="skill in frontendSkills"
               :key="skill.name"
-              class="flex justify-between items-center"
+              class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-200 text-xs font-semibold shadow-sm border border-blue-200 dark:border-blue-700"
             >
-              <span class="text-sm text-gray-700 dark:text-gray-300">{{ skill.name }}</span>
-              <div class="w-20 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                <div
-                  class="bg-blue-500 h-2 rounded-full"
-                  :style="{ width: skill.level + '%' }"
-                ></div>
-              </div>
-            </div>
+              {{ skill.name }}
+            </span>
           </div>
         </div>
 
@@ -70,20 +64,14 @@
               {{ $t('skills.backend') }}
             </h3>
           </div>
-          <div class="space-y-2">
-            <div
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span
               v-for="skill in backendSkills"
               :key="skill.name"
-              class="flex justify-between items-center"
+              class="px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-200 text-xs font-semibold shadow-sm border border-green-200 dark:border-green-700"
             >
-              <span class="text-sm text-gray-700 dark:text-gray-300">{{ skill.name }}</span>
-              <div class="w-20 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                <div
-                  class="bg-green-500 h-2 rounded-full"
-                  :style="{ width: skill.level + '%' }"
-                ></div>
-              </div>
-            </div>
+              {{ skill.name }}
+            </span>
           </div>
         </div>
 
@@ -108,20 +96,14 @@
               {{ $t('skills.database') }}
             </h3>
           </div>
-          <div class="space-y-2">
-            <div
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span
               v-for="skill in databaseSkills"
               :key="skill.name"
-              class="flex justify-between items-center"
+              class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-200 text-xs font-semibold shadow-sm border border-purple-200 dark:border-purple-700"
             >
-              <span class="text-sm text-gray-700 dark:text-gray-300">{{ skill.name }}</span>
-              <div class="w-20 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                <div
-                  class="bg-purple-500 h-2 rounded-full"
-                  :style="{ width: skill.level + '%' }"
-                ></div>
-              </div>
-            </div>
+              {{ skill.name }}
+            </span>
           </div>
         </div>
 
@@ -152,20 +134,14 @@
               {{ $t('skills.tools') }}
             </h3>
           </div>
-          <div class="space-y-2">
-            <div
+          <div class="flex flex-wrap gap-2 justify-center">
+            <span
               v-for="skill in toolSkills"
               :key="skill.name"
-              class="flex justify-between items-center"
+              class="px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-200 text-xs font-semibold shadow-sm border border-orange-200 dark:border-orange-700"
             >
-              <span class="text-sm text-gray-700 dark:text-gray-300">{{ skill.name }}</span>
-              <div class="w-20 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                <div
-                  class="bg-orange-500 h-2 rounded-full"
-                  :style="{ width: skill.level + '%' }"
-                ></div>
-              </div>
-            </div>
+              {{ skill.name }}
+            </span>
           </div>
         </div>
       </div>
@@ -195,9 +171,9 @@ const frontendSkills: Skill[] = [
 
 const backendSkills: Skill[] = [
   { name: 'Node.js', level: 90 },
-  { name: 'Python', level: 85 },
   { name: 'Express.js', level: 88 },
-  { name: 'FastAPI', level: 82 },
+  { name: 'Laravel', level: 80 },
+  { name: 'PHP', level: 78 },
   { name: 'REST APIs', level: 92 },
 ]
 
