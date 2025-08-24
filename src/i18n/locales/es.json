@@ -24,7 +24,24 @@
     "title": "Mis Proyectos",
     "subtitle": "Algunos de los proyectos en los que he trabajado",
     "viewProject": "Ver proyecto",
-    "viewCode": "Ver código"
+    "viewSite": "Ver Sitio",
+    "viewCode": "Ver Código",
+    "heroicart": {
+      "title": "Heroic.art",
+      "description": "Plataforma web moderna para la agencia de software y arte digital Heroic, con diseño responsivo y experiencia de usuario mejorada."
+    },
+    "podspun": {
+      "title": "Podspun",
+      "description": "Aplicación innovadora que utiliza inteligencia artificial para optimizar la gestión, edición y distribución multiplataforma de podcasts."
+    },
+    "aeroavila": {
+      "title": "Aeroavila",
+      "description": "Portal interactivo para Aeroavila que permite reservar vuelos privados, explorar destinos y consultar servicios premium de aviación."
+    },
+    "vecerca": {
+      "title": "Vecerca",
+      "description": "Marketplace especializado en la compraventa de aeronaves con sistema de búsqueda avanzada y conexión directa entre compradores y vendedores."
+    }
   },
   "skills": {
     "title": "Habilidades y Tecnologías",

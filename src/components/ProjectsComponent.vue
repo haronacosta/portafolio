@@ -31,6 +31,25 @@
             />
           </svg>
         </button>
+        <!-- Flecha Derecha -->
+        <button
+          @click="next"
+          class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-full p-2 shadow hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+        >
+          <svg
+            class="w-6 h-6 text-gray-700 dark:text-gray-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
 
         <!-- Carrusel -->
         <div class="overflow-hidden">
@@ -49,25 +68,23 @@
                 class="bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
               >
                 <!-- Project Image -->
-                <div class="relative h-48 overflow-hidden">
+                <div
+                  class="relative h-48 overflow-hidden cursor-pointer"
+                  @click="openModal(project)"
+                >
                   <template v-if="project.image">
                     <img
                       :src="project.image"
-                      :alt="project.title"
+                      :alt="$t(project.titleKey)"
                       class="absolute inset-0 w-full h-full object-cover"
                       @error="project.image = ''"
                     />
                     <div
-                      class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"
+                      class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-700 group-hover:scale-105"
                     ></div>
                     <div class="absolute inset-0 flex items-center justify-center">
                       <div class="text-white text-center">
-                        <div
-                          class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2"
-                        >
-                          <component :is="project.icon" class="w-8 h-8" />
-                        </div>
-                        <h3 class="text-lg font-semibold">{{ project.title }}</h3>
+                        <h3 class="text-lg font-semibold">{{ $t(project.titleKey) }}</h3>
                       </div>
                     </div>
                   </template>
@@ -76,16 +93,11 @@
                       class="absolute inset-0 h-48 bg-gradient-to-br from-blue-500 to-green-400"
                     ></div>
                     <div
-                      class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"
+                      class="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-700 group-hover:scale-105"
                     ></div>
                     <div class="absolute inset-0 flex items-center justify-center">
                       <div class="text-white text-center">
-                        <div
-                          class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2"
-                        >
-                          <component :is="project.icon" class="w-8 h-8" />
-                        </div>
-                        <h3 class="text-lg font-semibold">{{ project.title }}</h3>
+                        <h3 class="text-lg font-semibold">{{ $t(project.titleKey) }}</h3>
                       </div>
                     </div>
                   </template>
@@ -93,7 +105,7 @@
                 <!-- Project Content -->
                 <div class="p-6 flex-1 flex flex-col">
                   <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                    {{ project.description }}
+                    {{ $t(project.descriptionKey) }}
                   </p>
                   <!-- Technologies -->
                   <div class="flex flex-wrap gap-2 mb-4">
@@ -119,150 +131,139 @@
             </div>
           </div>
         </div>
-
-        <!-- Flecha Derecha -->
-        <button
-          @click="next"
-          class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-full p-2 shadow hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-        >
-          <svg
-            class="w-6 h-6 text-gray-700 dark:text-gray-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
       </div>
     </div>
 
-    <!-- Project Modal -->
-    <div
-      v-if="selectedProject"
-      class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
-      @click="closeModal"
-    >
+    <!-- Project Modal fuera del card -->
+    <transition name="modal-fade">
       <div
-        class="bg-gray-50 dark:bg-gray-900 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-        @click.stop
+        v-if="selectedProject"
+        class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+        @click="closeModal"
       >
-        <!-- Modal Header -->
-        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
-          <div class="flex justify-between items-start">
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
-              {{ selectedProject.title }}
-            </h3>
-            <button
-              @click="closeModal"
-              class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-            >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <div
+          class="bg-gray-50 dark:bg-gray-900 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-modal-in"
+          @click.stop
+        >
+          <template v-if="selectedProject">
+            <div>
+              <!-- Modal Header -->
+              <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                <div class="flex justify-between items-start">
+                  <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                    {{ $t(selectedProject.titleKey) }}
+                  </h3>
+                  <button
+                    @click="closeModal"
+                    class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                  >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
 
-        <!-- Modal Content -->
-        <div class="p-6">
-          <!-- Project Image -->
-          <div class="mb-6">
-            <div class="w-full h-64 relative rounded-lg overflow-hidden">
-              <template v-if="selectedProject.image">
-                <img
-                  :src="selectedProject.image"
-                  :alt="selectedProject.title"
-                  class="absolute inset-0 w-full h-full object-cover"
-                  @error="selectedProject.image = ''"
-                />
-                <div class="absolute inset-0 bg-black/20"></div>
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="text-white text-center">
-                    <div
-                      class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3"
-                    >
-                      <component :is="selectedProject.icon" class="w-10 h-10" />
-                    </div>
-                    <h4 class="text-xl font-semibold">{{ selectedProject.title }}</h4>
+              <!-- Modal Content -->
+              <div class="p-6">
+                <!-- Project Image -->
+                <div class="mb-6">
+                  <div class="w-full h-64 relative rounded-lg overflow-hidden">
+                    <template v-if="selectedProject.image">
+                      <img
+                        :src="selectedProject.image"
+                        :alt="$t(selectedProject.titleKey)"
+                        class="absolute inset-0 w-full h-full object-cover"
+                        @error="selectedProject.image = ''"
+                      />
+                      <div class="absolute inset-0 bg-black/20"></div>
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-white text-center">
+                          <h4 class="text-xl font-semibold">{{ $t(selectedProject.titleKey) }}</h4>
+                        </div>
+                      </div>
+                    </template>
+                    <template v-else>
+                      <div
+                        class="absolute inset-0 h-64 bg-gradient-to-br from-blue-500 to-green-400"
+                      ></div>
+                      <div class="absolute inset-0 bg-black/20"></div>
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-white text-center">
+                          <h4 class="text-xl font-semibold">{{ $t(selectedProject.titleKey) }}</h4>
+                        </div>
+                      </div>
+                    </template>
                   </div>
                 </div>
-              </template>
-              <template v-else>
+
+                <!-- Project Description -->
+                <div class="mb-6">
+                  <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                    Descripción
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {{ $t(selectedProject.descriptionKey) }}
+                  </p>
+                </div>
+
+                <!-- Technologies -->
                 <div
-                  class="absolute inset-0 h-64 bg-gradient-to-br from-blue-500 to-green-400"
-                ></div>
-                <div class="absolute inset-0 bg-black/20"></div>
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="text-white text-center">
-                    <div
-                      class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3"
+                  v-if="selectedProject.technologies && selectedProject.technologies.length"
+                  class="mb-6"
+                >
+                  <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                    Tecnologías
+                  </h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      v-for="tech in selectedProject.technologies"
+                      :key="tech"
+                      class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full"
                     >
-                      <component :is="selectedProject.icon" class="w-10 h-10" />
-                    </div>
-                    <h4 class="text-xl font-semibold">{{ selectedProject.title }}</h4>
+                      {{ tech }}
+                    </span>
                   </div>
                 </div>
-              </template>
+
+                <!-- Action Buttons -->
+                <div class="flex gap-3">
+                  <a
+                    v-if="
+                      selectedProject && selectedProject.liveUrl && selectedProject.liveUrl !== '#'
+                    "
+                    :href="selectedProject.liveUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-6 rounded-lg transition-colors font-medium"
+                  >
+                    {{ $t('projects.viewSite') }}
+                  </a>
+                  <a
+                    v-if="
+                      selectedProject &&
+                      selectedProject.githubUrl &&
+                      selectedProject.githubUrl !== '#'
+                    "
+                    :href="selectedProject.githubUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex-1 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 text-center py-3 px-6 rounded-lg transition-colors font-medium"
+                  >
+                    {{ $t('projects.viewCode') }}
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <!-- Project Description -->
-          <div class="mb-6">
-            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Descripción</h4>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-              {{ selectedProject.description }}
-            </p>
-          </div>
-
-          <!-- Technologies -->
-          <div class="mb-6">
-            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Tecnologías</h4>
-            <div class="flex flex-wrap gap-2">
-              <span
-                v-for="tech in selectedProject.technologies"
-                :key="tech"
-                class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm rounded-full"
-              >
-                {{ tech }}
-              </span>
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="flex gap-3">
-            <a
-              v-if="selectedProject.liveUrl && selectedProject.liveUrl !== '#'"
-              :href="selectedProject.liveUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-6 rounded-lg transition-colors font-medium"
-            >
-              Ver Demo
-            </a>
-            <a
-              v-if="selectedProject.githubUrl && selectedProject.githubUrl !== '#'"
-              :href="selectedProject.githubUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex-1 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 text-center py-3 px-6 rounded-lg transition-colors font-medium"
-            >
-              Ver Código
-            </a>
-          </div>
+          </template>
         </div>
       </div>
-    </div>
+    </transition>
   </section>
 </template>
 
@@ -270,18 +271,16 @@
 import type { Component } from 'vue'
 import { ref, computed } from 'vue'
 import {
-  CodeBracketIcon,
   GlobeAltIcon,
   DevicePhoneMobileIcon,
   CpuChipIcon,
-  ServerIcon,
   CommandLineIcon,
 } from '@heroicons/vue/24/outline'
 
 interface Project {
   id: number
-  title: string
-  description: string
+  titleKey: string
+  descriptionKey: string
   technologies: string[]
   liveUrl?: string
   githubUrl?: string
@@ -302,69 +301,43 @@ const closeModal = () => {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Plataforma de E-commerce',
-    description:
-      'Plataforma de comercio electrónico completa con sistema de pagos, gestión de inventario y panel de administración. Incluye funcionalidades como carrito de compras, historial de pedidos, sistema de reseñas y análisis de ventas en tiempo real.',
-    technologies: ['Vue.js', 'Node.js', 'MongoDB', 'Stripe'],
-    liveUrl: '#',
+    titleKey: 'projects.heroicart.title',
+    descriptionKey: 'projects.heroicart.description',
+    technologies: [],
+    liveUrl: 'https://heroic.art/',
     githubUrl: '#',
     icon: GlobeAltIcon,
-    image: '/src/assets/ecommerce-project.jpg',
+    image: '/src/assets/Heroic.png',
   },
   {
     id: 2,
-    title: 'Aplicación de Gestión de Tareas',
-    description:
-      'Aplicación de gestión de tareas con funcionalidades de colaboración en tiempo real y notificaciones. Permite crear equipos, asignar tareas, establecer prioridades, y realizar seguimiento del progreso con métricas detalladas.',
-    technologies: ['React', 'Firebase', 'TypeScript', 'Tailwind'],
-    liveUrl: '#',
+    titleKey: 'projects.podspun.title',
+    descriptionKey: 'projects.podspun.description',
+    technologies: [],
+    liveUrl: 'https://podspun.com/',
     githubUrl: '#',
     icon: CommandLineIcon,
-    image: '/src/assets/task-app.jpg',
+    image: '/src/assets/Podspun.png',
   },
   {
     id: 3,
-    title: 'Aplicación de Banca Móvil',
-    description:
-      'Aplicación móvil de banca con autenticación biométrica, transferencias y gestión de cuentas.',
-    technologies: ['React Native', 'Node.js', 'PostgreSQL', 'Redis'],
-    liveUrl: '#',
+    titleKey: 'projects.aeroavila.title',
+    descriptionKey: 'projects.aeroavila.description',
+    technologies: [],
+    liveUrl: 'https://aeroavila.com/',
     githubUrl: '#',
     icon: DevicePhoneMobileIcon,
-    image: '/src/assets/banking-app.jpg',
+    image: '/src/assets/Aeroavila.png',
   },
   {
     id: 4,
-    title: 'Asistente de Chat con IA',
-    description:
-      'Asistente de chat inteligente con procesamiento de lenguaje natural y integración con APIs externas.',
-    technologies: ['Python', 'FastAPI', 'OpenAI', 'Docker'],
+    titleKey: 'projects.vecerca.title',
+    descriptionKey: 'projects.vecerca.description',
+    technologies: [],
     liveUrl: '#',
     githubUrl: '#',
     icon: CpuChipIcon,
-    image: '/src/assets/ai-chat.jpg',
-  },
-  {
-    id: 5,
-    title: 'Infraestructura en la Nube',
-    description:
-      'Infraestructura en la nube con autenticación, balanceo de carga y monitoreo automático.',
-    technologies: ['AWS', 'Terraform', 'Docker', 'Kubernetes'],
-    liveUrl: '#',
-    githubUrl: '#',
-    icon: ServerIcon,
-    image: '/src/assets/cloud-infra.jpg',
-  },
-  {
-    id: 6,
-    title: 'Editor de Código',
-    description:
-      'Editor de código web con resaltado de sintaxis, autocompletado y múltiples temas.',
-    technologies: ['Monaco Editor', 'Vue.js', 'WebAssembly', 'IndexedDB'],
-    liveUrl: '#',
-    githubUrl: '#',
-    icon: CodeBracketIcon,
-    image: '/src/assets/code-editor.jpg',
+    image: '/src/assets/Veserca.png',
   },
 ]
 
@@ -401,5 +374,26 @@ function next() {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+@keyframes modal-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.animate-modal-in {
+  animation: modal-in 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.3s;
+}
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
 }
 </style>

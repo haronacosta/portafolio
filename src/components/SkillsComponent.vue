@@ -165,24 +165,25 @@ const frontendSkills: Skill[] = [
   { name: 'Vue.js', level: 95 },
   { name: 'React', level: 90 },
   { name: 'TypeScript', level: 88 },
-  { name: 'Tailwind CSS', level: 92 },
+  { name: 'Tailwind', level: 92 },
   { name: 'HTML/CSS', level: 95 },
+  { name: 'Next', level: 90 },
+  { name: 'Quasar', level: 93 },
+  { name: 'WordPress', level: 78 },
 ]
 
 const backendSkills: Skill[] = [
   { name: 'Node.js', level: 90 },
-  { name: 'Express.js', level: 88 },
   { name: 'Laravel', level: 80 },
   { name: 'PHP', level: 78 },
-  { name: 'REST APIs', level: 92 },
+  { name: 'C#', level: 92 },
 ]
 
 const databaseSkills: Skill[] = [
   { name: 'MongoDB', level: 88 },
   { name: 'PostgreSQL', level: 85 },
-  { name: 'Redis', level: 80 },
   { name: 'MySQL', level: 82 },
-  { name: 'GraphQL', level: 78 },
+  { name: 'SQLServer', level: 78 },
 ]
 
 const toolSkills: Skill[] = [
@@ -191,5 +192,6 @@ const toolSkills: Skill[] = [
   { name: 'AWS', level: 80 },
   { name: 'CI/CD', level: 82 },
   { name: 'Linux', level: 88 },
+  { name: 'Github Actions', level: 80 },
 ]
 </script>

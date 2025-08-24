@@ -24,7 +24,24 @@
     "title": "My Projects",
     "subtitle": "Some of the projects I've worked on",
     "viewProject": "View project",
-    "viewCode": "View code"
+    "viewSite": "View Site",
+    "viewCode": "View Code",
+    "heroicart": {
+      "title": "Heroic.art",
+      "description": "Modern web platform for the digital art and software agency Heroic, with responsive design and enhanced user experience."
+    },
+    "podspun": {
+      "title": "Podspun",
+      "description": "Innovative app that uses artificial intelligence to optimize podcast management, editing, and multiplatform distribution."
+    },
+    "aeroavila": {
+      "title": "Aeroavila",
+      "description": "Interactive portal for Aeroavila to book private flights, explore destinations, and consult premium aviation services."
+    },
+    "vecerca": {
+      "title": "Vecerca",
+      "description": "Specialized marketplace for buying and selling aircraft with advanced search and direct connection between buyers and sellers."
+    }
   },
   "skills": {
     "title": "Skills & Technologies",
