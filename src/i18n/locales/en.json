@@ -15,7 +15,11 @@
   },
   "about": {
     "title": "About Me",
-    "description": "I'm a passionate fullstack developer with a love for technology and innovation. With experience in modern web application development, I specialize in creating robust and scalable solutions.",
+    "description": [
+      "I specialize in designing and developing modern web applications, creating robust, secure, and scalable solutions tailored to each project's needs.",
+      "My approach combines technical efficiency with the creation of attractive and functional digital experiences, always seeking to generate real value through technology.",
+      "This portfolio brings together some of my projects and experiences, reflecting my commitment to quality, continuous improvement, and innovation."
+    ],
     "experience": "Years of experience",
     "projects": "Projects completed",
     "technologies": "Technologies mastered"

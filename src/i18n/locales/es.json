@@ -15,7 +15,11 @@
   },
   "about": {
     "title": "Sobre mí",
-    "description": "Soy un desarrollador fullstack apasionado por la tecnología y la innovación. Con experiencia en el desarrollo de aplicaciones web modernas, me especializo en crear soluciones robustas y escalables.",
+    "description": [
+      "Me especializo en el diseño y desarrollo de aplicaciones web modernas, creando soluciones robustas, seguras y escalables que se adaptan a las necesidades de cada proyecto.",
+      "Mi enfoque combina la eficiencia técnica con la creación de experiencias digitales atractivas y funcionales, siempre buscando generar valor real a través de la tecnología.",
+      "Este portafolio reúne algunos de mis proyectos y experiencias, reflejando mi compromiso con la calidad, la mejora continua y la innovación."
+    ],
     "experience": "Años de experiencia",
     "projects": "Proyectos completados",
     "technologies": "Tecnologías dominadas"

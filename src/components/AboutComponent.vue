@@ -20,9 +20,15 @@
       <!-- Información sobre mí -->
       <div class="flex-1 text-center md:text-left">
         <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">Sobre mí</h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
-          {{ $t('about.description') }}
-        </p>
+        <div>
+          <p
+            v-for="(paragraph, idx) in $tm('about.description')"
+            :key="idx"
+            class="text-gray-700 dark:text-gray-300 mb-4"
+          >
+            {{ paragraph }}
+          </p>
+        </div>
       </div>
     </div>
   </section>
