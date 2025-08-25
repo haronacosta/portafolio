@@ -36,7 +36,7 @@
             <span
               v-for="skill in frontendSkills"
               :key="skill.name"
-              class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-200 text-xs font-semibold shadow-sm border border-blue-200 dark:border-blue-700"
+              class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-200 text-xs font-semibold shadow-sm border border-blue-200 dark:border-blue-700 transition-all duration-200 transform hover:scale-105 hover:shadow-lg cursor-pointer select-none"
             >
               {{ skill.name }}
             </span>
@@ -68,7 +68,7 @@
             <span
               v-for="skill in backendSkills"
               :key="skill.name"
-              class="px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-200 text-xs font-semibold shadow-sm border border-green-200 dark:border-green-700"
+              class="px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-200 text-xs font-semibold shadow-sm border border-green-200 dark:border-green-700 transition-all duration-200 transform hover:scale-105 hover:shadow-lg cursor-pointer select-none"
             >
               {{ skill.name }}
             </span>
@@ -100,7 +100,7 @@
             <span
               v-for="skill in databaseSkills"
               :key="skill.name"
-              class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-200 text-xs font-semibold shadow-sm border border-purple-200 dark:border-purple-700"
+              class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-200 text-xs font-semibold shadow-sm border border-purple-200 dark:border-purple-700 transition-all duration-200 transform hover:scale-105 hover:shadow-lg cursor-pointer select-none"
             >
               {{ skill.name }}
             </span>
@@ -138,7 +138,7 @@
             <span
               v-for="skill in toolSkills"
               :key="skill.name"
-              class="px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-200 text-xs font-semibold shadow-sm border border-orange-200 dark:border-orange-700"
+              class="px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-200 text-xs font-semibold shadow-sm border border-orange-200 dark:border-orange-700 transition-all duration-200 transform hover:scale-105 hover:shadow-lg cursor-pointer select-none"
             >
               {{ skill.name }}
             </span>

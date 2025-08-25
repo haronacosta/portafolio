@@ -121,7 +121,7 @@
                   <div class="flex gap-3 mt-auto">
                     <button
                       @click="openModal(project)"
-                      class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition-colors text-sm font-medium"
+                      class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition-all duration-200 text-sm font-medium transform hover:scale-105 hover:shadow-lg"
                     >
                       {{ $t('projects.viewProject') }}
                     </button>
