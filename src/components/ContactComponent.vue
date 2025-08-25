@@ -6,10 +6,10 @@
       </p>
       <div class="flex flex-col items-center space-y-4 mb-8">
         <a
-          href="mailto:hello@haronacosta.me"
+          href="mailto:haronacosta@proton.me"
           class="inline-flex items-center text-sky-400 dark:text-sky-400 text-lg font-semibold mail-link transition-all duration-300 focus:outline-none"
         >
-          hello@haronacosta.me
+          haronacosta@proton.me
         </a>
       </div>
       <div class="flex justify-center space-x-6 text-gray-600 dark:text-gray-300">
