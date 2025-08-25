@@ -276,6 +276,10 @@ import {
   CpuChipIcon,
   CommandLineIcon,
 } from '@heroicons/vue/24/outline'
+import HeroicImg from '@/assets/Heroic.png'
+import PodspunImg from '@/assets/Podspun.png'
+import AeroavilaImg from '@/assets/Aeroavila.png'
+import VesercaImg from '@/assets/Veserca.png'
 
 interface Project {
   id: number
@@ -307,7 +311,7 @@ const projects: Project[] = [
     liveUrl: 'https://heroic.art/',
     githubUrl: '#',
     icon: GlobeAltIcon,
-    image: '/src/assets/Heroic.png',
+    image: HeroicImg,
   },
   {
     id: 2,
@@ -317,7 +321,7 @@ const projects: Project[] = [
     liveUrl: 'https://podspun.com/',
     githubUrl: '#',
     icon: CommandLineIcon,
-    image: '/src/assets/Podspun.png',
+    image: PodspunImg,
   },
   {
     id: 3,
@@ -327,7 +331,7 @@ const projects: Project[] = [
     liveUrl: 'https://aeroavila.com/',
     githubUrl: '#',
     icon: DevicePhoneMobileIcon,
-    image: '/src/assets/Aeroavila.png',
+    image: AeroavilaImg,
   },
   {
     id: 4,
@@ -337,7 +341,7 @@ const projects: Project[] = [
     liveUrl: '#',
     githubUrl: '#',
     icon: CpuChipIcon,
-    image: '/src/assets/Veserca.png',
+    image: VesercaImg,
   },
 ]
 
